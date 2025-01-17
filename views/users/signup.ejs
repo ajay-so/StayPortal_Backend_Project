@@ -1,0 +1,28 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row">
+    <div class="col-6 offset-3 mt-3">
+        <h2>SignUp with StayHub</h2>
+        <form method="POST" action="/signup" novalidate class="needs-validation">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter the user name"
+                    class="form-control" required>
+                <div class="valid-feedback">Looks good.</div>
+                <div class="invalid-feedback">Plese the username</div>
+            </div>
+            <div class="mb-3">
+                <label for="gmail" class="form-label">Gmail:</label>
+                <input type="gmail" id="gmail" name="gmail" placeholder="Enter gmail"
+                    class="form-control" required>
+                    <div class="invalid-feedback">Enter gmail</div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter the password"
+                    class="form-control" required>
+                <div class="invalid-feedback">Enter password</div>
+            </div>
+            <button class="btn btn-outline-success">Sign Up</button>
+        </form>
+    </div>
+</div>
