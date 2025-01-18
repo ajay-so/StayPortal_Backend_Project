@@ -1,9 +1,9 @@
 <% layout("/layouts/boilerplate") %>
 
     <body>
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-10 offset-1">
-                <h3>Edit the Listing</h3>
+                <h3 class="text-center">Edit the Listing</h3>
                 <form method="POST" action="/listings/<%= listing._id %>?_method=PATCH" class="needs-validation" novalidate>
                     <div class="mb-3">
                         <label for="title" class="form-label">Title:</label>
@@ -32,14 +32,13 @@
                             <input type="number" id="price" name="listing[price]" value="<%= listing.price %>"
                                 class="form-control" required>
                                 <div class="invalid-feedback">Price should be valid</div>
-
                         </div>
+
                         <div class="mb-3 col-md-8">
                             <label for="country" class="form-label">Country:</label>
                             <input type="text" id="country" name="listing[country]" value="<%= listing.country %>"
                                 class="form-control" required>
                                 <div class="invalid-feedback">Country should be valid</div>
-
                         </div>
                     </div>
 
@@ -48,9 +47,9 @@
                         <input type="text" id="location" name="listing[location]" value="<%= listing.location %>"
                             class="form-control" required>
                             <div class="invalid-feedback">Location should be valid</div>
-
                     </div>
                     <br>
+
                     <button type="submit" class="btn btn-outline-success">Submit</button><br><br>
                 </form>
             </div>

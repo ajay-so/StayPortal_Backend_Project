@@ -16,6 +16,8 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require('./models/user.js');
 
+
+
 const app = express();
 const port = 8080;
 
@@ -82,6 +84,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req ,res, next) =>{
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
+    res.locals.currentUser = req.user;
     next();
 })
 
