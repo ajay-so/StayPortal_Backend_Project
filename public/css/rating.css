@@ -187,8 +187,8 @@
   
   .starability-coinFlip > label {
     position: relative;
-    display: inline-block;
     float: left;
+    display: inline-block;
     width: 30px;
     height: 30px;
     font-size: 0.1em;
