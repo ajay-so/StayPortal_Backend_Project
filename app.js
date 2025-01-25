@@ -13,6 +13,7 @@ const reviewRouter= require("./routes/review.js");
 const userRouter= require("./routes/user.js");
 
 const Session = require("express-session");
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 
 const passport = require("passport");
@@ -40,8 +41,10 @@ app.use((err, req, res, next) => {
 });
 
 //this is for connected with mongodb
+const urlDB = process.env.ATLASDB_URL;
+
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/stayhub');
+    await mongoose.connect(urlDB);
 }
 
 //call the main function
@@ -57,7 +60,16 @@ app.listen(port, (req, res) => {
 
 });
 
+const store = MongoStore.create({
+    mongoUrl : urlDB,
+    crypto : {
+        secret : "mysecretcode",
+    },
+    touchAfter : 24 * 3600,
+})
+
 const sessionOptions = {
+    store,
     secret: "mysecretcode",
     resave: false,
     saveUninitialized: true,

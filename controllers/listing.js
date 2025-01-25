@@ -66,7 +66,7 @@ module.exports.updateListing = async (req, res) => {
         const { id } = req.params; 
         const q = req.body.listing.location; 
         const format = 'geojson';
-        const endpoint = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=${format}&limit=1`;
+        const endpoint = `https://nominatim.openstreetmap.org/search?q=${q}&format=${format}&limit=1`;
         if (!req.body.listing) {
             throw new ExpressError(400, "Please provide valid data for the listing.");
         }
