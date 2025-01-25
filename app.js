@@ -57,11 +57,6 @@ app.listen(port, (req, res) => {
 
 });
 
-// home route
-app.get("/", (req, res) => {
-    res.send("this is the home root");
-});
-
 const sessionOptions = {
     secret: "mysecretcode",
     resave: false,
@@ -90,15 +85,6 @@ app.use((req ,res, next) =>{
     res.locals.currentUser = req.user;
     next();
 })
-
-// app.get("/demouser", async(req , res) => {
-//     const fakeuser = new User({
-//         gmail : "ajay@123",
-//         username : "Ajay",
-//     });
-//     let registeruser = await User.register(fakeuser , "ajay123");
-//     res.send(registeruser);
-// })
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);

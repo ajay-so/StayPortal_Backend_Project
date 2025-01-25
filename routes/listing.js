@@ -12,14 +12,18 @@ router
 .get(wrapAsync(listingController.index))
 .post(isLoggedin,upload.single('listing[image]'), validateListing, wrapAsync(listingController.createListing));
 
+router.get("/search",wrapAsync(listingController.renderSearchForm));
+
 // new route
 router.get("/new",isLoggedin, listingController.renderNewForm);
+
 
 router
 .route("/:id")
 .get(wrapAsync(listingController.showListing))
 .patch(isLoggedin,isOwner,upload.single('listing[image]'), validateListing, wrapAsync(listingController.updateListing))
 .delete(isLoggedin,isOwner, wrapAsync(listingController.destroy));
+
 
 // edit route
 router.get("/:id/edit",isLoggedin, wrapAsync(listingController.renderEditForm));

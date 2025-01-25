@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom shadow-sm sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="/listings">
       <img src="/images/StayHub-logo.png" alt="StayHub Logo" class="me-2 logo-image">
@@ -7,7 +7,12 @@
     <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="navbar-collapse bg-sm-light bg-white collapse" id="navbarNav">
+      <form class="d-flex ms-auto" role="search" action="/listings/search" method="GET">
+        <input class="form-control w-auto me-2" type="search" name="country" placeholder="Search for a country" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="/listings">Home</a>
@@ -17,15 +22,15 @@
         </li>
         <% if(!currentUser) {%>
           <li class="nav-item">
-            <a class="nav-link" href="/signup">Sign Up</a>
+            <a class="nav-link" href="/signup"><b>Sign Up</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/login">Log In</a>
+            <a class="nav-link" href="/login"><b>Log In</b></a>
           </li>
           <% } %>
           <% if(currentUser) {%>
             <li class="nav-item">
-              <a class="nav-link" href="/logout">Log Out</a>
+              <a class="nav-link" href="/logout"><b>Log Out</b></a>
             </li>
           <% } %>
       </ul>
