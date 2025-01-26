@@ -12,7 +12,7 @@ let marker = new maptilersdk.Marker({
 })
   .setLngLat(coordinates)
   .setPopup(new maptilersdk.Popup({ offset: 20 })
-    .setHTML("<h6>Welcome to StayHub :)</h6>")
+    .setHTML("<h6>Welcome to StayNest :)</h6>")
   )
   .addTo(map);
 
