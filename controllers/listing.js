@@ -35,7 +35,7 @@ module.exports.createListing = async (req, res, next) => {
         newlisting.owner = req.user._id;
         newlisting.image = { url, filename };
         const apiResponse = await axios.get(endpoint);
-        if (apiResponse.data.features && apiResponse.data.features.length > 0) {
+        if (apiResponse.data.features.length > 0) {
             newlisting.geometry = apiResponse.data.features[0].geometry;
         } else {
             req.flash('error', 'Location not found!');
@@ -78,7 +78,7 @@ module.exports.updateListing = async (req, res) => {
         }
 
         const apiResponse = await axios.get(endpoint);
-        if (apiResponse.data.features && apiResponse.data.features.length > 0) {
+        if ( apiResponse.data.features.length > 0) {
             listing.geometry = apiResponse.data.features[0].geometry; 
         } else {
             req.flash('error', 'Location not found! Please provide a valid location.');
