@@ -405,11 +405,6 @@ connect-mongo@^5.1.0:
     debug "^4.3.1"
     kruptein "^3.0.0"
 
-connect-mongoose@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/connect-mongoose/-/connect-mongoose-0.0.2.tgz#eb79167ae0da5059069483dd9bc2e49261cb8b7b"
-  integrity sha512-aLtnWRh6cz8dPKr3vzTJUBWoa9AHZ8S+tqZcBQAeanz51iwXlXslBle3lhegvjt/ilm5CCYJbTBqdwLLO0u9LA==
-
 content-disposition@0.5.4:
   version "0.5.4"
   resolved "https://registry.npmjs.org/content-disposition/-/content-disposition-0.5.4.tgz"
