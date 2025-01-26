@@ -34,7 +34,7 @@
                 <% if(currentUser && currentUser._id.equals(listing.owner._id)) {%>
                     <div class="btns">
                         <a class="btn btn-outline-primary"
-                            href="http://localhost:8080/listings/<%= listing._id %>/edit">Edit</a>
+                            href="/listings/<%= listing._id %>/edit">Edit</a>
                         <form method="post" action="/listings/<%= listing._id %>?_method=DELETE">
 
                             <button class="btn btn-outline-danger offset-2 offset-lg-4">delete</button>
@@ -43,8 +43,8 @@
                     <% } %>
             </div>
             <div class="col-lg-6 offset-lg-3 mt-3">
-                <hr>
                 <% if(currentUser) {%>
+                    <hr>
                     <h4>Leave a Review</h4>
                     <form action="/listings/<%= listing.id %>/reviews" method="POST" novalidate
                         class="needs-validation">

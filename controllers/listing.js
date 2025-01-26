@@ -53,11 +53,8 @@ module.exports.createListing = async (req, res, next) => {
 
 
 module.exports.renderEditForm = async (req, res) => {
-    const { id } = req.params;
-    
+    const { id } = req.params; 
     let listing = await Listing.findById(id);
-
-    req.flash("success", "Listing Edited");
     res.render("listings/edit.ejs", { listing });
 }
 
