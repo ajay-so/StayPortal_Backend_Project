@@ -13,7 +13,7 @@ module.exports.signUpRoute = async (req, res) => {
             if(err){
                 return next(err);
             }
-            req.flash("success", "Welcome to StayNest!")
+            req.flash("success", "Welcome to StayPortal!")
             res.redirect("/listings");
         });
     } catch (e) {
@@ -27,7 +27,7 @@ module.exports.renderLoginForm = (req, res) => {
 }
 
 module.exports.loginUser = async (req, res) => {
-    req.flash("success",`Welcome back to the StayNest`);
+    req.flash("success",`Welcome back to the StayPortal`);
     const redirectUrl = res.locals.redirectUrl || "/listings";
     res.redirect(redirectUrl);  
 }
