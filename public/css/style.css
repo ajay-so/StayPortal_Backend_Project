@@ -124,6 +124,10 @@ margin-right: 1rem;
     width: 100%;
 }
 
+.login_link{
+  text-decoration: none !important;
+}
+
 
 
 

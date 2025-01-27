@@ -19,6 +19,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require('./models/user.js');
+const {execSync} = require('child_process');
 
 
 
@@ -90,11 +91,13 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+const lastUpdated = execSync('git log -1 --format=%ci').toString().trim();
 
 app.use((req ,res, next) =>{
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
     res.locals.currentUser = req.user;
+    res.locals.lastUpdated = lastUpdated;
     next();
 })
 

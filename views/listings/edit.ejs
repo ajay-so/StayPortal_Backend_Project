@@ -4,26 +4,26 @@
         <div class="row mt-3">
             <div class="col-10 offset-1">
                 <h3 class="text-center">Edit the Listing</h3>
-                <form method="POST" action="/listings/<%= listing._id %>?_method=PATCH" class="needs-validation" novalidate enctype="multipart/form-data">
+                <form method="POST" action="/listings/<%= listing._id %>?_method=PATCH" class="needs-validation"
+                    novalidate enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="title" class="form-label">Title:</label>
                         <input type="text" id="title" name="listing[title]" value="<%= listing.title %>"
                             class="form-control" required>
-                            <div class="invalid-feedback">Please enter the title</div>
+                        <div class="invalid-feedback">Please enter the title</div>
                     </div>
 
                     <div class="mb-3">
                         <label for="description" class="form-label">Description:</label>
-                        <textarea id="description" name="listing[description]"
-                            class="form-control" required><%= listing.description %></textarea>
-                            <div class="invalid-feedback">Please enter the little description</div>
+                        <textarea id="description" name="listing[description]" class="form-control"
+                            required><%= listing.description %></textarea>
+                        <div class="invalid-feedback">Please enter the little description</div>
                     </div>
 
                     <div class="mb-3">
                         <label for="image" class="form-label">Upload the new image:</label>
-                        <input type="file" id="image" name="listing[image]"
-                            class="form-control">
-                            <div class="invalid-feedback">Upload the new image:</div>
+                        <input type="file" id="image" name="listing[image]" class="form-control">
+                        <div class="invalid-feedback">Upload the new image:</div>
                     </div>
 
                     <div class="row">
@@ -31,26 +31,74 @@
                             <label for="price" class="form-label">Price:</label>
                             <input type="number" id="price" name="listing[price]" value="<%= listing.price %>"
                                 class="form-control" required>
-                                <div class="invalid-feedback">Price should be valid</div>
+                            <div class="invalid-feedback">Price should be valid</div>
                         </div>
 
                         <div class="mb-3 col-md-8">
                             <label for="location" class="form-label">Location:</label>
-                        <input type="text" id="location" name="listing[location]" value="<%= listing.location %>"
-                            class="form-control" required>
-                            <div class="invalid-feedback">Location should be valid</div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="country" class="form-label">Country:</label>
-                            <input type="text" id="country" name="listing[country]" value="<%= listing.country %>"
+                            <input type="text" id="location" name="listing[location]" value="<%= listing.location %>"
                                 class="form-control" required>
-                                <div class="invalid-feedback">Country should be valid</div>
+                            <div class="invalid-feedback">Location should be valid</div>
+                        </div>
+                        
+                    </div>
+                    <div class="mb-4">
+                        <label for="country" class="form-label fw-medium">Country</label>
+                        <select class="form-select border-shadow-green" id="country" name="listing[country]"
+                            aria-label="Floating label select example" value="<%= listing.country %>" required>
+                            <option value="India">India</option>
+                            <option value="United States">United States</option>
+                            <option value="France">France</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Greece">Greece</option>
+                            <option value="United Arab Emirates">United Arab Emirates</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Canada">Canada</option>
+                            <option value="China">China</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="South Korea">South Korea</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Norway">Norway</option>
+                            <option value="Finland">Finland</option>
+                            <option value="Iceland">Iceland</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Chile">Chile</option>
+                            <option value="Vietnam">Vietnam</option>
+                            <option value="Morocco">Morocco</option>
+                            <option value="Israel">Israel</option>
+                            <option value="Peru">Peru</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Czech Republic">Czech Republic</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="Russia">Russia</option>
+                            <option value="South Korea">South Korea</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Costa Rica">Costa Rica</option>
+                        </select>
                     </div>
                     <br>
-
                     <button type="submit" class="btn btn-outline-success">Submit</button><br><br>
                 </form>
             </div>

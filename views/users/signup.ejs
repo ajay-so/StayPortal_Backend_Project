@@ -1,5 +1,5 @@
 <% layout("/layouts/boilerplate") %>
-<div class="row">
+    <!-- <div class="row">
     <div class="col-md-6 offset-md-3 mt-3">
         <h2 class="text-center">SignUp with StayNest</h2>
         <form method="POST" action="/signup" novalidate class="needs-validation">
@@ -25,4 +25,32 @@
             <button class="btn btn-outline-success">Sign Up</button>
         </form>
     </div>
-</div>
+</div> -->
+
+    <div class="container d-flex justify-content-center align-items-center mt-4 mb-3" style="min-height: 60vh;">
+        <div class="bg-light-subtle border border-primary rounded p-4 shadow-sm w-100" style="max-width: 600px;">
+            <h2 class="text-center">SignUp with StayNest</h2>
+            <form method="POST" action="/signup" novalidate class="needs-validation">
+                <div class="mb-3 mt-4">
+                    <label for="username" class="form-label">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter the user name"
+                        class="form-control" required>
+                    <div class="valid-feedback">Looks good.</div>
+                    <div class="invalid-feedback">Please enter the username</div>
+                </div>
+                <div class="mb-3">
+                    <label for="gmail" class="form-label">Gmail:</label>
+                    <input type="email" id="gmail" name="gmail" placeholder="Enter Gmail" class="form-control" required>
+                    <div class="invalid-feedback">Enter Gmail</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter the password"
+                        class="form-control" required>
+                    <div class="invalid-feedback">Enter password</div>
+                </div>
+                <button class="btn btn-outline-success w-100">Sign Up</button>
+                <p class="mt-3 text-center ">Already have an account <a class="login_link" href="/login">Login</a></p>
+            </form>
+        </div>
+    </div>
