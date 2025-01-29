@@ -21,8 +21,6 @@ const LocalStrategy = require("passport-local");
 const User = require('./models/user.js');
 const {execSync} = require('child_process');
 
-
-
 const app = express();
 const port = 8080;
 
@@ -84,7 +82,6 @@ const sessionOptions = {
 app.use(Session(sessionOptions));
 app.use(flash());
 
-
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -101,6 +98,11 @@ app.use((req ,res, next) =>{
     next();
 })
 
+
+app.get("/",(req, res) =>{
+    res.render("listings/mainpage.ejs");
+});
+
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
@@ -109,6 +111,8 @@ app.use("/", userRouter);
 app.all("*", (req, res, next) => {
     next(new ExpressError(404, "page not found!"));
 })
+
+
 
 // error route
 app.use((err, req, res, next) => {
