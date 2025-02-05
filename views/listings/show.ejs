@@ -81,7 +81,7 @@
                             <hr>
                             <div class="row">
                                 <h4 class="">All Reviews</h4>
-                                <div class="d-flex flex-wrap gap-3">
+                                <div class="d-flex flex-wrap gap-3 mt-2">
                                     <% for (review of listing.reviews) { %>
                                         <div
                                             class="card flex-grow-1 flex-sm-shrink-0 col-12 col-sm-5 col-lg-5 p-3 shadow-sm rounded-3 review">
@@ -94,10 +94,12 @@
                                                 <p class="card-text">
                                                     <%= review.comment %>
                                                 </p>
-                                                <form method="POST"
-                                                    action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
-                                                    <button class="btn btn-outline-danger btn-sm">Delete</button>
-                                                </form>
+                                                <% if(currentUser) {%>
+                                                    <form method="POST"
+                                                        action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                                                        <button class="btn btn-outline-danger btn-sm">Delete</button>
+                                                    </form>
+                                                    <% } %>
                                             </div>
                                         </div>
                                         <% } %>
