@@ -98,7 +98,6 @@ app.use((req ,res, next) =>{
     next();
 })
 
-
 app.get("/",(req, res) =>{
     res.render("listings/mainpage.ejs");
 });
@@ -111,8 +110,6 @@ app.use("/", userRouter);
 app.all("*", (req, res, next) => {
     next(new ExpressError(404, "page not found!"));
 })
-
-
 
 // error route
 app.use((err, req, res, next) => {
